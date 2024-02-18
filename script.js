@@ -17,29 +17,29 @@ class CreateCard extends React.Component {
     "Fill in the word and description!" :
     "";
     return /*#__PURE__*/(
-      React.createElement("div", { className: "create-card" }, /*#__PURE__*/
+      React.createElement("div", { className: "create-card" },
       React.createElement("div", {
         className: "create-card__shadow",
         onClick: () => {
           this.props.onShadowClick();
-        } }), /*#__PURE__*/
+        } }), 
 
-      React.createElement("div", { className: "create-card__body" }, /*#__PURE__*/
-      React.createElement("h1", null, "Create New Card"), /*#__PURE__*/
-      React.createElement("div", { className: "create-card__input-wrapper" }, /*#__PURE__*/
+      React.createElement("div", { className: "create-card__body" }, 
+      React.createElement("h1", null, "Create New Card"), 
+      React.createElement("div", { className: "create-card__input-wrapper" },
       React.createElement("input", {
         id: "word",
         placeholder: "Term",
         value: this.state.word,
-        onChange: e => this.setState({ word: e.target.value }) }), /*#__PURE__*/
+        onChange: e => this.setState({ word: e.target.value }) }), 
 
       React.createElement("input", {
         id: "description",
         placeholder: "Description",
         value: this.state.description,
-        onChange: e => this.setState({ description: e.target.value }) }), /*#__PURE__*/
+        onChange: e => this.setState({ description: e.target.value }) }), 
 
-      React.createElement("br", null), /*#__PURE__*/
+      React.createElement("br", null), 
       React.createElement("button", {
         id: "create-card__button",
         onClick: () => {
@@ -57,7 +57,7 @@ class CreateCard extends React.Component {
 
             this.props.onCreateCard(word);
           }
-        } }, "Create!"), /*#__PURE__*/
+        } }, "Create!"), 
 
 
 
@@ -79,9 +79,9 @@ class Header extends React.Component {
 
   render() {
     return /*#__PURE__*/(
-      React.createElement("div", { className: "header" }, /*#__PURE__*/
-      React.createElement("div", { className: "header-content header-content__left" }), /*#__PURE__*/
-      React.createElement("div", { className: "header-content header-content__middle" }, "My Cards"), /*#__PURE__*/
+      React.createElement("div", { className: "header" }, 
+      React.createElement("div", { className: "header-content header-content__left" }), 
+      React.createElement("div", { className: "header-content header-content__middle" }, "My Cards"),
       React.createElement("div", { className: "header-content header-content__right" })));
 
 
@@ -107,9 +107,9 @@ class Card extends React.Component {
     return /*#__PURE__*/(
       React.createElement("div", {
         className: `card ${cardClass}`,
-        onClick: () => this.setState({ showAnswer: !this.state.showAnswer }) }, /*#__PURE__*/
+        onClick: () => this.setState({ showAnswer: !this.state.showAnswer }) },
 
-      React.createElement("span", { className: "card__counter" }, this.props.cardNumber + 1), /*#__PURE__*/
+      React.createElement("span", { className: "card__counter" }, this.props.cardNumber + 1), 
       React.createElement("div", {
         className: "card__flip-card",
         onClick: () => {
@@ -126,17 +126,17 @@ class Card extends React.Component {
           } 
         }, "Delete"),*/
 
-      React.createElement("span", { className: `fa fa-${iconClass}` })), /*#__PURE__*/
+      React.createElement("span", { className: `fa fa-${iconClass}` })),
       
 
-      React.createElement("div", { className: `card__content--${contentClass}` }, content), /*#__PURE__*/
-      React.createElement("div", { className: `card__actions ${actionClass}` }, /*#__PURE__*/
+      React.createElement("div", { className: `card__content--${contentClass}` }, content), 
+      React.createElement("div", { className: `card__actions ${actionClass}` },
       React.createElement("div", {
         className: "card__prev-button",
         onClick: () => {
           this.props.showPrevCard();
           this.setState({ showAnswer: false });
-        } }, "Previous"), /*#__PURE__*/
+        } }, "Previous"), 
 
 
 
@@ -164,11 +164,11 @@ class CardContainer extends React.Component {
 
       {
         word: "Country",
-        description: "yeehaw" },
+        description: "Yeehaw" },
 
       {
         word: "Folk",
-        description: "strum strum - banjo" }]),
+        description: "Banjo" }]),
 
 
       cardNumber: 0 };
@@ -205,7 +205,7 @@ class CardContainer extends React.Component {
     let arr = [];
     _.times(times).forEach(num => {
       const dotClass = num === this.state.cardNumber ? "active" : "";
-      arr.push( /*#__PURE__*/
+      arr.push( 
       React.createElement("span", {
         className: `card-container__dot fa fa-circle ${dotClass}`,
         onClick: () => this.setState({ cardNumber: num }) }));
@@ -217,7 +217,7 @@ class CardContainer extends React.Component {
   generateCards() {
     const cards = this.state.cards;
     const cardsList = cards.map(card => {
-      return /*#__PURE__*/(
+      return (
         React.createElement(Card, {
           frontContent: card.get("word"),
           backContent: card.get("description"),
@@ -229,22 +229,22 @@ class CardContainer extends React.Component {
     return cardsList.toJS()[this.state.cardNumber];
   }
   render() {
-    return /*#__PURE__*/(
-      React.createElement("div", null, /*#__PURE__*/
+    return (
+      React.createElement("div", null, 
       React.createElement("span", {
         className: "card-container__icon  fa fa-plus",
         onClick: () => {
           this.setState({ showModal: !this.state.showModal });
         } }),
 
-      this.state.showModal ? /*#__PURE__*/
+      this.state.showModal ? 
       React.createElement(CreateCard, {
         onShadowClick: this.boundCallback,
         onCreateCard: this.boundCreateCard }) :
 
       "",
 
-      this.generateCards(), /*#__PURE__*/
+      this.generateCards(), 
       React.createElement("div", { className: "card-container__dots-wrapper" },
       this.generateDots())));
 
@@ -253,7 +253,7 @@ class CardContainer extends React.Component {
 
 class Main extends React.Component {
   render() {
-    return /*#__PURE__*/(
+    return (
       React.createElement("div", { className: "wrapper" }, 
       React.createElement(Header, null), 
       React.createElement("div", { className: "content-wrapper" },
