@@ -115,7 +115,7 @@ class Card extends React.Component {
         onClick: () => {
           this.setState({ showAnswer: !this.state.showAnswer });
         } }, /*#__PURE__*/
-        React.createElement("div", {
+        /*React.createElement("div", {
           className: "card_delete-button",
           onClick: () => {
             function deleteItem(e){
@@ -124,7 +124,7 @@ class Card extends React.Component {
             }
             deleteItem(this);
           } 
-        }, "Delete"),
+        }, "Delete"),*/
 
       React.createElement("span", { className: `fa fa-${iconClass}` })), /*#__PURE__*/
       
